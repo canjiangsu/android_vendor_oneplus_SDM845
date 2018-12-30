@@ -1,7 +1,7 @@
 {
   "config": {
     "hw_platform": [ "MTP", "Dragon", "Surf", "HDK"],
-    "soc_id": ["291", "246", "305", "321", "336", "341"]
+    "soc_id": ["291", "246", "305", "321", "336", "339", "340", "341", "360"]
   },
   "sns_tilt": {
     "owner": "sns_tilt",
@@ -12,8 +12,6 @@
     "init_accel_window_time": {"ver": "0","type": "flt", "data": "1.0"
     },
     "accel_window_time": {"ver": "0","type": "flt", "data": "2.0"
-    },
-    "enabled": {"ver": "0","type": "int", "data": "1"
     }
   }
 }

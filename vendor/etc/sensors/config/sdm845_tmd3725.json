@@ -45,7 +45,7 @@
         "data": "2"
       },
       "rail_on_state":{ "type": "int", "ver": "0",
-        "data": "1"
+        "data": "2"
       },
       "vdd_rail":{ "type": "str", "ver": "0",
         "data": "/pmic/client/sensor_vdd"
@@ -89,6 +89,9 @@
           "data": "0.0"
         },
         "poffseth":{ "type": "flt", "ver": "0",
+          "data": "0.0"
+        },
+        "crosstalk":{ "type": "flt", "ver": "0",
           "data": "0.0"
         }
       }

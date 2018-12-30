@@ -14,9 +14,6 @@
 on boot
     # oppo_trace
     chmod 0640 /dev/otracer
-    # raw partition
-    chmod 0660 /dev/block/mmcblk0p26
-    chown root system /dev/block/mmcblk0p26
     mkdir /system/etc/param 0644 root root
     chown system system /sys/kernel/debug/dynamic_debug/control
 
@@ -41,7 +38,7 @@ on charger
     mount ext4 /dev/block/bootdevice/by-name/cache /cache
     start charger_logkit
 
-on property:persist.oem.dump=1
+on property:persist.vendor.oem.dump=1
     write /sys/module/msm_poweroff/parameters/download_mode 1
     write /sys/kernel/dload/dload_mode full
     write /sys/kernel/dload/emmc_dload 0
@@ -49,7 +46,7 @@ on property:persist.oem.dump=1
     write /proc/restart_level_all 1
     write /proc/sys/kernel/printk "4 6 1 7"
 
-on property:persist.oem.dump=0
+on property:persist.vendor.oem.dump=0
     write /sys/module/msm_poweroff/parameters/download_mode 1
     write /sys/kernel/dload/dload_mode mini
     write /sys/kernel/dload/emmc_dload 1

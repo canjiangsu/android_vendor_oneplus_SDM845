@@ -28,7 +28,7 @@
         <!-- L3 resource opcode, value-->
         <!-- GPU DISABLE resource opcode, value-->
 
-        <!-- Type="1", main launch boost of 1sec -->
+        <!-- Type="1", main launch boost of 2sec -->
         <Config
             Id="0x00001081" Type="1" Enable="true" Timeout="2000" Target="sdm845"
             Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
@@ -61,22 +61,26 @@
         <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value -->
         <!-- SCHEDBOOST resource opcode, value-->
+        <!-- L3_MEMLAT_MIN_FREQ resource opcode, value -->
 
         <!-- Type="1", Vertical Scroll boost -->
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="sdm845"
-            Resources="0x43000000, 0x19, 0x40800000, 1000, 0x40800100, 1000, 0x40C00000, 0x2" />
+            Resources="0x43000000, 0x19, 0x40800000, 1000, 0x40800100, 1000, 0x40C00000, 0x2,
+                       0x43400000, 0x1F40" />
 
     <!--Prefling Scroll boost-->
         <!-- LLCBW_MIN_FREQ resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value -->
         <!-- SCHEDBOOST resource opcode, value-->
+        <!-- L3_MEMLAT_MIN_FREQ resource opcode, value -->
         <!-- TIMEOUT 80ms -->
         <!-- Type="4", Prefling boost -->
         <Config
             Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="sdm845"
-            Resources="0x43000000, 0x19, 0x40800000, 1000, 0x40800100, 1000, 0x40C00000, 0x2" />
+            Resources="0x43000000, 0x19, 0x40800000, 1000, 0x40800100, 1000, 0x40C00000, 0x2,
+                       0x43400000, 0x1F40" />
 
     <!--Horizontal Scroll boost-->
         <!-- SCHEDBOOST resource opcode, value-->
@@ -91,11 +95,13 @@
         <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value -->
         <!-- SCHEDBOOST resource opcode, value-->
+        <!-- L3_MEMLAT_MIN_FREQ resource opcode, value -->
 
         <!-- Type="1", Drag boost -->
         <Config
             Id="0x00001087" Type="1" Enable="true" Timeout="0" Target="sdm845"
-            Resources="0x43000000, 0x11, 0x40800000, 1300, 0x40800100, 1000, 0x40C00000, 0x2" />
+            Resources="0x43000000, 0x11, 0x40800000, 1000, 0x40800100, 1000, 0x40C00000, 0x2,
+                       0x43400000, 0x1F40" />
 
     <!--PackageInstall boost-->
         <!-- SCHEDBOOST resource opcode, value-->
@@ -109,5 +115,27 @@
             Id="0x00001088" Enable="true" Target="sdm845"
             Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000,0xFFF,
                        0x40800100,0xFFF" />
+
+    <!--Rotation latency boost-->
+        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
+        <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+        <!-- Type="", Rotation latency boost -->
+
+        <Config
+            Id="0x00001089" Enable="true" Timeout="1500" Target="sdm845"
+            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000,0xFFF,
+                       0x40800100,0xFFF" />
+
+    <!--Rotation animation boost-->
+        <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+        <!-- GPU MIN_FREQUENCY resource opcode,value-->
+        <!-- Type="", Rotation animation boost -->
+
+        <Config
+            Id="0x00001090" Enable="true" Timeout="1000" Target="sdm845"
+            Resources="0x40800100, 1000, 0x4280C000, 596" />
     </PerfBoost>
 </BoostConfigs>

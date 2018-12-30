@@ -2,9 +2,19 @@
   "config":
   {
     "hw_platform": ["MTP", "Dragon", "Surf", "QRD", "HDK"],
-    "soc_id": ["291", "246", "305", "321", "336", "341"]
+    "soc_id": ["291", "246", "300", "301", "305", "321", "336", "339", "341", "347", "360"]
   },
 
+  "sns_diag_config":
+  {
+    "owner":"diag_filter_sensor",
+    "qdss":
+    {
+      "type" : "int",
+      "ver"  : "0",
+      "data" : "0"
+    }
+  },
 
   "sns_diag_sensor_datatype":
   {
@@ -88,6 +98,12 @@
       "ver" : "0",
       "data" : "1"
     },
+    "offbody_detect":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
     "thermopile":
     {
       "type" : "int",
@@ -122,19 +138,19 @@
     {
       "type" : "int",
       "ver" : "0",
-      "data" : "1"
+      "data" : "0"
     },
     "flush_test":
     {
       "type" : "int",
       "ver" : "0",
-      "data" : "1"
+      "data" : "0"
     },
     "md_test":
     {
       "type" : "int",
       "ver" : "0",
-      "data" : "1"
+      "data" : "0"
     },
     "da_test":
     {
@@ -268,6 +284,60 @@
       "ver" : "0",
       "data" : "1"
     },
+    "heart_rate":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "ppg":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "wrist_tilt_gesture":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "pedometer_wrist":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "data_acquisition_engine":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "ccd_walk":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "ccd_ttw":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "ccd_hw":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "threshold":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
     "sar":
     {
       "type" : "int",
@@ -281,6 +351,12 @@
       "data" : "1"
     },
     "pickup":
+    {
+      "type" : "int",
+      "ver" : "0",
+      "data" : "1"
+    },
+    "op_motion_detect":
     {
       "type" : "int",
       "ver" : "0",

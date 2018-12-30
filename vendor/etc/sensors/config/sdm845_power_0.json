@@ -1,6 +1,6 @@
 {
   "config":{
-    "hw_platform": ["MTP", "Surf", "QRD", "HDK"],
+    "hw_platform": ["MTP", "Surf","HDK"],
     "soc_id": ["321", "341"]
   },
   "power":{
@@ -187,10 +187,10 @@
           "data": "0"
         },
         "sleep_pull":{ "type": "int", "ver": "0",
-          "data": "2"
+          "data": "0"
         },
         "sleep_drive":{ "type": "int", "ver": "0",
-          "data": "3"
+          "data": "0"
         }
       },
       ".gpio_6":{

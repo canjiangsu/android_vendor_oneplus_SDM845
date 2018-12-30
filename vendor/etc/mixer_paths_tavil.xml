@@ -158,6 +158,9 @@
     <ctl name="MultiMedia5 Mixer USB_AUDIO_TX" value="0" />
     <ctl name="MultiMedia8 Mixer USB_AUDIO_TX" value="0" />
     <ctl name="MultiMedia10 Mixer USB_AUDIO_TX" value="0" />
+<!-- wangbuqing,add USB RX default config,20180620,add Start -->
+    <ctl name="USB_AUDIO_RX SampleRate" value="KHZ_48" />
+<!-- wangbuqing,add USB RX default config,20180620,add END -->
     <ctl name="MultiMedia6 Mixer SLIM_0_TX" value="0" />
     <ctl name="SLIM_2_RX Format" value="UNPACKED" />
     <ctl name="SLIM_2_RX SampleRate" value="KHZ_48" />
@@ -550,6 +553,13 @@
     <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia7" value="0" />
+
+    <!-- defaults for mmap record -->
+    <ctl name="MultiMedia16 Mixer SLIM_0_TX" value="0" />
+    <ctl name="MultiMedia16 Mixer SLIM_7_TX" value="0" />
+    <ctl name="MultiMedia16 Mixer SLIM_8_TX" value="0" />
+    <ctl name="MultiMedia16 Mixer USB_AUDIO_TX" value="0" />
+
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="gsm-mode">
@@ -1979,40 +1989,31 @@
     </path>
 
     <path name="speaker">
- <!--        <ctl name="COMP7 Switch" value="1" /> -->
- <!--        <ctl name="COMP8 Switch" value="1" />  -->
- <!--        <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" /> -->
- <!--        <ctl name="SLIM RX1 MUX" value="AIF_MIX1_PB" /> -->
- <!--        <ctl name="SLIM_0_RX Channels" value="Two" /> -->
- <!--        <ctl name="RX INT7_1 MIX1 INP0" value="RX0" /> -->
- <!--        <ctl name="RX INT8_1 MIX1 INP0" value="RX1" /> -->
- <!--        <ctl name="SpkrLeft COMP Switch" value="1" /> -->
- <!--        <ctl name="SpkrRight COMP Switch" value="1" /> -->
- <!--        <ctl name="SpkrLeft BOOST Switch" value="1" /> -->
- <!--        <ctl name="SpkrRight BOOST Switch" value="1" /> -->
- <!--        <ctl name="SpkrLeft VISENSE Switch" value="1" /> -->
- <!--        <ctl name="SpkrRight VISENSE Switch" value="1" /> -->
- <!--        <ctl name="SpkrLeft SWR DAC_Port Switch" value="1" /> -->
- <!--        <ctl name="SpkrRight SWR DAC_Port Switch" value="1" /> -->
+<!--        <ctl name="SLIM RX0 MUX" value="AIF1_PB" /> -->
+<!--        <ctl name="CDC_IF RX0 MUX" value="SLIM RX0" /> -->
+<!--        <ctl name="SLIM RX1 MUX" value="AIF1_PB" /> -->
+<!--        <ctl name="CDC_IF RX1 MUX" value="SLIM RX1" /> -->
+<!--        <ctl name="SLIM_0_RX Channels" value="Two" /> -->
+<!--        <ctl name="RX INT7_1 MIX1 INP0" value="RX0" /> -->
+<!--        <ctl name="RX INT8_1 MIX1 INP0" value="RX1" /> -->
+<!--        <ctl name="COMP7 Switch" value="1" /> -->
+<!--        <ctl name="COMP8 Switch" value="1" /> -->
+<!--        <ctl name="SpkrLeft COMP Switch" value="1" /> -->
+<!--        <ctl name="SpkrLeft BOOST Switch" value="1" /> -->
+<!--        <ctl name="SpkrLeft VISENSE Switch" value="1" /> -->
+<!--        <ctl name="SpkrLeft SWR DAC_Port Switch" value="1" /> -->
+<!--        <ctl name="SpkrRight COMP Switch" value="1" /> -->
+<!--        <ctl name="SpkrRight BOOST Switch" value="1" /> -->
+<!--        <ctl name="SpkrRight VISENSE Switch" value="1" /> -->
+<!--        <ctl name="SpkrRight SWR DAC_Port Switch" value="1" /> -->
     </path>
-
 <!--#ifdef VENDOR_EDIT
 /*lifei@AudioDrv,20180224,add for game */ -->
    <path name="speaker-ext-2">
    </path>
+   <path name="speaker-ext-1">
+   </path>
 <!--#endif-->
-
-    <path name="speaker-fluid">
- <!--         <ctl name="COMP7 Switch" value="1" /> -->
- <!--         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" /> -->
- <!--         <ctl name="SLIM_0_RX Channels" value="One" /> -->
- <!--         <ctl name="RX INT7_1 MIX1 INP0" value="RX0" /> -->
- <!--         <ctl name="SpkrLeft COMP Switch" value="1" /> -->
- <!--         <ctl name="SpkrLeft BOOST Switch" value="1" /> -->
- <!--         <ctl name="SpkrLeft VISENSE Switch" value="1" /> -->
- <!--         <ctl name="SpkrLeft SWR DAC_Port Switch" value="1" /> -->
-    </path>
-
     <path name="speaker-mono">
  <!--         <ctl name="COMP7 Switch" value="1" /> -->
  <!--         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" /> -->
@@ -2078,12 +2079,9 @@
         <ctl name="Voice Sidetone Enable" value="1" />
     </path>
 
-<!-- #ifdef VENDOR_EDIT -->
-<!-- zhiguang.su@MultiMediaDrive,2017/06/08,17801 mic config-->
     <path name="speaker-mic">
         <path name="amic4" />
     </path>
-<!-- #endif -->
 
     <path name="speaker-mic-liquid">
         <path name="dmic2" />
@@ -2127,6 +2125,7 @@
     <path name="vi-feedback-mono-2">
     </path>
 
+<!--#ifdef VENDOR_EDIT  -->
     <path name="handset">
         <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
         <ctl name="CDC_IF RX0 MUX" value="SLIM RX0" />
@@ -2135,7 +2134,7 @@
         <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
         <ctl name="EAR SPKR PA Gain" value="G_6_DB" />
     </path>
-
+<!--endif -->
     <path name="handset-qrd">
         <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
         <ctl name="CDC_IF RX0 MUX" value="SLIM RX0" />
@@ -2147,12 +2146,12 @@
     <path name="handset-mic">
         <path name="amic4" />
     </path>
-
+<!--#ifdef VENDOR_EDIT  -->
     <path name="handset-mic-karaoke">
         <path name="amic3" />
         <ctl name="ADC3 Volume" value="6" />
     </path>
-
+<!--endif -->
     <path name="handset-mic-rec">
         <path name="amic3" />
         <ctl name="ADC3 Volume" value="6" />
@@ -2298,7 +2297,7 @@
     <path name="voice-handset">
         <path name="handset" />
     </path>
-    
+
     <path name="voice-handset-tmus">
         <path name="handset" />
     </path>
@@ -2354,6 +2353,12 @@
     <path name="voice-headset-mic">
         <path name="headset-mic" />
     </path>
+
+    <!-- liuhaituo@MM.Audio 2018/8/9 add for incall record begin-->
+    <path name="voice-headset-anc-mic">
+        <path name="headset-mic" />
+    </path>
+    <!-- add end -->
 
     <path name="speaker-and-headphones">
         <path name="headphones" />
@@ -2797,25 +2802,31 @@
     <path name="voice-tty-full-headphones">
         <ctl name="TTY Mode" value="FULL" />
         <path name="tty-headphones" />
+<!-- ifdef VENDOR_EDIT -->
         <ctl name="HPHL Volume" value="3" />
         <ctl name="HPHR Volume" value="3" />
         <ctl name="RX1 Mix Digital Volume" value="82" />
         <ctl name="RX2 Mix Digital Volume" value="82" />
+<!-- endif -->
     </path>
 
     <path name="voice-tty-vco-headphones">
         <ctl name="TTY Mode" value="VCO" />
         <path name="tty-headphones" />
+<!-- ifdef VENDOR_EDIT -->
         <ctl name="HPHL Volume" value="3" />
         <ctl name="HPHR Volume" value="3" />
         <ctl name="RX1 Mix Digital Volume" value="82" />
         <ctl name="RX2 Mix Digital Volume" value="82" />
+<!-- endif -->
     </path>
 
     <path name="voice-tty-hco-handset">
         <ctl name="TTY Mode" value="HCO" />
         <path name="handset" />
+<!-- ifdef VENDOR_EDIT -->
         <ctl name="RX0 Digital Volume" value="84" />
+<!-- endif -->
     </path>
 
     <path name="voice-tty-hco-handset-qrd">
@@ -2830,8 +2841,10 @@
 
     <path name="voice-tty-full-headset-mic">
         <path name="amic2" />
+<!-- ifdef VENDOR_EDIT -->
         <ctl name="ADC2 Volume" value="6" />
         <ctl name="DEC0 Volume" value="82" />
+<!-- endif -->
     </path>
 
     <path name="voice-tty-hco-headset-mic">
@@ -2839,8 +2852,10 @@
     </path>
 
     <path name="voice-tty-vco-handset-mic">
+<!-- ifdef VENDOR_EDIT -->
         <path name="amic4" />
         <ctl name="DEC0 Volume" value="94" />
+<!-- endif -->
     </path>
 
     <path name="unprocessed-handset-mic">
@@ -2898,8 +2913,6 @@
     </path>
 
     <path name="bt-a2dp">
-        <ctl name="BT SampleRate" value="KHZ_48" />
-        <ctl name="AFE Input Channels" value="Two" />
         <ctl name="SLIM7_RX ADM Channels" value="Two" />
     </path>
 

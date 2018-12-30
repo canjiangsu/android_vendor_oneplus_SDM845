@@ -32,4 +32,10 @@ ak991x_dri_0.json,
 sdm845_mmc3530kj_0.json,
 mmc3530kj_0.json,
 sdm845_stk36xx_0.json,
-stk36xx_0.json
+stk36xx_0.json,
+sdm845_stk3x3x_0.json,
+stk3x3x_0.json,
+sdm845_tcs3400.json,
+tcs3400.json,
+sdm845_apds9251.json,
+apds9251.json

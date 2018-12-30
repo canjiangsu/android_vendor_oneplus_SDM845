@@ -27,12 +27,12 @@
 #
 
 #################################
-if [ -f /persist/engineermode_masterclear_flag ]; then
+if [ -f /mnt/vendor/persist/engineermode/engineermode_masterclear_flag ]; then
 		setprop persist.sys.allcommode true
-		setprop persist.allcommode true
-		setprop persist.sys.adb.engineermode 0
+		setprop persist.vendor.allcommode true
+		setprop persist.sys.adb.engineermode 1
 		setprop persist.sys.usb.config diag,adb
-		rm /persist/engineermode_masterclear_flag
+		rm /mnt/vendor/persist/engineermode/engineermode_masterclear_flag
 fi
 ##################################
 

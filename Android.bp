@@ -1,4 +1,4 @@
-cc_prebuilt_library_static {
+/*cc_prebuilt_library_static {
  name: "libbtif_qti",
  target: {
    android_arm: {
@@ -12,9 +12,9 @@ cc_prebuilt_library_static {
       ],
     },
   },
-}
+}*/
 
-cc_prebuilt_library_shared {
+/*cc_prebuilt_library_shared {
  name: "libbluetooth_qti",
  target: {
    android_arm: {
@@ -31,19 +31,19 @@ cc_prebuilt_library_shared {
  strip: {
    none: true,
  },
-}
+}*/
 
 cc_prebuilt_library_shared {
  name: "com.qualcomm.qti.bluetooth_audio@1.0",
  target: {
    android_arm: {
      srcs: [
-       "lib/com.qualcomm.qti.bluetooth_audio@1.0.so",
+       "vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so",
      ],
    },
    android_arm64: {
      srcs: [
-       "lib64/com.qualcomm.qti.bluetooth_audio@1.0.so",
+       "vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so",
      ],
    },
  },
@@ -57,12 +57,12 @@ cc_prebuilt_library_shared {
  target: {
    android_arm: {
      srcs: [
-       "lib/com.qualcomm.qti.ant@1.0.so",
+       "vendor/lib/com.qualcomm.qti.ant@1.0.so",
      ],
    },
    android_arm64: {
      srcs: [
-       "lib64/com.qualcomm.qti.ant@1.0.so",
+       "vendor/lib64/com.qualcomm.qti.ant@1.0.so",
      ],
    },
  },
@@ -76,12 +76,12 @@ cc_prebuilt_library_shared {
  target: {
    android_arm: {
      srcs: [
-       "lib/vendor.qti.hardware.fm@1.0.so",
+       "vendor/lib/vendor.qti.hardware.fm@1.0.so",
      ],
    },
    android_arm64: {
      srcs: [
-       "lib64/vendor.qti.hardware.fm@1.0.so",
+       "vendor/lib64/vendor.qti.hardware.fm@1.0.so",
      ],
    },
  },
